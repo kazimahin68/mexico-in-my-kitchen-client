@@ -26,20 +26,14 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const handleGoogleSingUp = () =>{
-        setLoading(true);
-        return signInWithPopup(auth, googleProvider)
-    }
-
-    const handleGithubSignUp = () =>{
+    const handleGithubLogin = () =>{
         setLoading(true);
         return signInWithPopup(auth, githubProvider)
     }
 
     const handleGoogleLogin = () =>{
         setLoading(true);
-        signInWithRedirect(auth, googleProvider);
-        return getRedirectResult(auth);
+        return signInWithPopup(auth, googleProvider)
     }
 
 
@@ -61,12 +55,11 @@ const AuthProvider = ({children}) => {
     const authInfo = {
         user,
         createUser,
-        handleGoogleSingUp,
-        logOut,
-        handleGithubSignUp,
         loggedIn,
-        loading,
-        handleGoogleLogin
+        handleGoogleLogin,
+        handleGithubLogin,
+        logOut,
+        loading
     }
 
 

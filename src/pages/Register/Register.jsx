@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Button, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
-    const { createUser, handleGoogleSingUp, handleGithubSignUp } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photo.value;
-        
+
         if(password.length < 6){
             setError('Your Password must have at least 6 characters');
             return
@@ -52,27 +52,27 @@ const Register = () => {
         })
     }
 
-    const handleGoogleResister = () =>{
-        handleGoogleSingUp()
-        .then(() =>{
-            setSuccess('You are Successfully Registered');
-            navigate('/')
-        })
-        .catch(error =>{
-            setError(error.message)
-        })
-    }
+    // const handleGoogleResister = () =>{
+    //     handleGoogleSingUp()
+    //     .then(() =>{
+    //         setSuccess('You are Successfully Registered');
+    //         navigate('/')
+    //     })
+    //     .catch(error =>{
+    //         setError(error.message)
+    //     })
+    // }
 
-    const handleGithubRegister = () =>{
-        handleGithubSignUp()
-        .then(() =>{
-            setSuccess('You are Successfully Registered');
-            navigate('/')
-        })
-        .catch(error =>{
-            setError(error.message)
-        })
-    }
+    // const handleGithubRegister = () =>{
+    //     handleGithubSignUp()
+    //     .then(() =>{
+    //         setSuccess('You are Successfully Registered');
+    //         navigate('/')
+    //     })
+    //     .catch(error =>{
+    //         setError(error.message)
+    //     })
+    // }
 
     return (
         <Form onSubmit={handleRegister} className='w-50 mx-auto bg-warning p-5 bg-opacity-50 rounded mt-5'>
@@ -97,7 +97,7 @@ const Register = () => {
                 <Button variant="success" type="submit" className='bg-success bg-opacity-75 w-50 mt-3 fw-semibold'>Register</Button>
             </div>
 
-            <div className='d-flex justify-content-around align-items-center mt-3'>
+            {/* <div className='d-flex justify-content-around align-items-center mt-3'>
                 <hr className='text-body border border-3 border-dark w-25' />
                 <p className='m-0 fw-semibold'>Or You can Register By</p>
                 <hr className='text-body border border-3 border-dark w-25' />
@@ -107,7 +107,7 @@ const Register = () => {
                 <p className='m-0 fw-bold mt-3'>OR</p>
                 <Button onClick={handleGithubRegister} variant='success' className='bg-success bg-opacity-75 mt-3 p-2'>
                    <FaGithub className='me-2 mb-1'></FaGithub> Sign up with Github</Button>
-            </div>
+            </div> */}
 
             <p className='text-success fw-semibold'>{success}</p>
         </Form>

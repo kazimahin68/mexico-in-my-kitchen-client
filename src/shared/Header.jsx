@@ -31,7 +31,7 @@ const Header = () => {
                         <Nav>
                             <div className='ms-3'>
                                 {user ? <div className='d-flex justify-content-center align-items-center'>
-                                    <p className='m-0 me-3'>{user.email}</p>
+                                    <p className='m-0 me-3'>{user.displayName}</p>
                                     <p className='m-0 me-3'>{error}</p>
                                     <Button onClick={handleLogout} variant='secondary' className='fs-6 fw-semibold'>Logout</Button>
                                 </div> : <Link to="/login">

@@ -1,11 +1,90 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+    const { loggedIn, handleGoogleLogin, handleGithubLogin } = useContext(AuthContext);
+
+    const [success, setSuccess] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        loggedIn(email, password)
+            .then(result => {
+                // const loggedUser = result.user;
+                // console.log(loggedUser)
+                setSuccess('You are Successfully Registered');
+                form.reset();
+                navigate('/')
+            })
+            .catch(error => {
+                setError(error.message);
+                form.reset();
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        handleGoogleLogin()
+            .then(() => {
+                setSuccess('You are Successfully Registered');
+                navigate('/')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        handleGithubLogin()
+            .then((result) => {
+                console.log(result.user)
+                setSuccess('You are Successfully Registered');
+                navigate('/')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
     return (
         <div>
-            <h2>Login Page....</h2>
-            <Link to="/register">Register</Link>
+            <Form onSubmit={handleRegister} className='w-50 mx-auto bg-warning p-5 bg-opacity-50 rounded mt-5'>
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                    <Form.Label className='fw-semibold fs-5'>Email address</Form.Label>
+                    <Form.Control name='email' type="email" placeholder="Enter email" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupPassword">
+                    <Form.Label className='fw-semibold fs-5'>Password</Form.Label>
+                    <Form.Control name='password' type="password" placeholder="Password" required />
+                </Form.Group>
+                <div className='text-center'>
+                    <p className='text-danger fw-semibold mt-2'>{error}</p>
+                    <Button variant="success" type="submit" className='bg-success bg-opacity-75 w-50 mt-3 fw-semibold'>Login</Button>
+                </div>
+
+                <div className='d-flex justify-content-around align-items-center mt-3'>
+                    <hr className='text-body border border-3 border-dark w-25' />
+                    <p className='m-0 fw-semibold'>Or You can Login By</p>
+                    <hr className='text-body border border-3 border-dark w-25' />
+                </div>
+                <div className='d-flex mt-3 justify-content-around align-items-center'>
+                    <Button onClick={handleGoogleSignIn} variant="success" className='bg-success bg-opacity-75 p-2 mt-3 fw-semibold me-2'> <FaGoogle className='me-2 text-warning mb-1'></FaGoogle>Sign in with Google</Button>
+                    <p className='m-0 fw-bold mt-3 me-2'>OR</p>
+                    <Button onClick={handleGithubSignIn} variant='success' className='bg-success bg-opacity-75 mt-3 p-2'>
+                        <FaGithub className='me-2 mb-1'></FaGithub> Sign in with Github</Button>
+                </div>
+                <p className='text-success fw-semibold'>{success}</p>
+                <p className='text-center'>Are you new to this site? Please <Link to="/register" className='text-decoration-none text-danger fw-semibold'>Register</Link></p>
+            </Form>
         </div>
     );
 };
