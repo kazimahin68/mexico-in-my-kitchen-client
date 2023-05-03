@@ -3,6 +3,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { Button, Form } from 'react-bootstrap';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Navigate, useNavigate } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
@@ -18,16 +19,37 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photo.value;
+        
+        if(password.length < 6){
+            setError('Your Password must have at least 6 characters');
+            return
+        }
 
         createUser(email, password)
             .then(result => {
-                setSuccess('You are Successfully Registered')
-                form.reset()
+                const registeredUser = result.user;
+                // console.log(registeredUser)
+                setSuccess('You are Successfully Registered');
+                updateUserProfile(registeredUser, name, photoUrl);
+                form.reset();
+                navigate('/')
             })
             .catch(error => {
                 setError(error.message);
                 form.reset();
             })
+    }
+
+    const updateUserProfile = (user, name, photoUrl) =>{
+        updateProfile(user, {
+            displayName: name,
+            photoURL: photoUrl
+        })
+        .then(() =>{
+        })
+        .catch(error =>{
+            setError(error.message)
+        })
     }
 
     const handleGoogleResister = () =>{
