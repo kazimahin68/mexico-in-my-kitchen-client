@@ -3,6 +3,7 @@ import HomeBanner from '../Banner/HomeBanner';
 import { useLoaderData } from 'react-router-dom';
 import ChefDetails from '../ChefDetails/ChefDetails';
 import { Spinner } from 'react-bootstrap';
+import BestChefs from '../BestChefs/BestChefs';
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -21,6 +22,13 @@ const Home = () => {
                 {
                     chefs.map(chef => <ChefDetails key={chef.id} chef={chef} ></ChefDetails>)
                 }
+                </div>
+                <div>
+
+                {
+                    chefs.map(chef => <BestChefs key={chef.id} chef={chef} ></BestChefs>)
+                }
+
                 </div>
             </div>
         );
