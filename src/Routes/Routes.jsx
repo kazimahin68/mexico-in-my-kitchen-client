@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://mexico-in-kitchen-server.vercel.app/chefs')
+                loader: () => fetch('https://mexico-in-kitchen-server-kazimahin68.vercel.app/chefs')
             },
             {
                 path: '/login',
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/recipes/:id',
                 element: <PrivateRout><Recipes></Recipes></PrivateRout>,
-                loader: ({params}) => fetch(`https://mexico-in-kitchen-server.vercel.app/chefs/${params.id}`)
+                loader: ({params}) => fetch(`https://mexico-in-kitchen-server-kazimahin68.vercel.app/chefs/${params.id}`)
             },
             {
                 path: '/blogs',
