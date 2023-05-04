@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../Provider/AuthProvider';
 import logoImage from "../assets/Screenshot 2023-05-03 203047.png";
+import ActiveLink from './ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -24,9 +25,9 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="mx-auto">
-                            <Link className='text-decoration-none text-black me-4' to="/">Home</Link>
-                            <Link className='text-decoration-none text-black me-4' to="/">Blogs</Link>
-                            <Link className='text-decoration-none text-black' to="/">About</Link>
+                            <ActiveLink to="/">Home</ActiveLink>
+                            <ActiveLink to="/blogs">Blogs</ActiveLink>
+                            <ActiveLink to="/about">About</ActiveLink>
                         </Nav>
                         <Nav>
                             <div className='ms-3'>
