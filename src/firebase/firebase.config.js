@@ -5,12 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAgWfESiB0Aak4S8SeRN1ayuUAcwLnaM9E",
-  authDomain: "mexico-in-my-kitchen.firebaseapp.com",
-  projectId: "mexico-in-my-kitchen",
-  storageBucket: "mexico-in-my-kitchen.appspot.com",
-  messagingSenderId: "548742119051",
-  appId: "1:548742119051:web:605514209e2e8934869e8e"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
+
 };
 
 // Initialize Firebase
