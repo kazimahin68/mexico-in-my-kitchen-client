@@ -5,9 +5,9 @@ const Footer = () => {
     return (
         <div className='bg-black p-2 mt-5'>
             <div className='container d-flex flex-md-row flex-column justify-content-between p-5 gap-4'>
-                <div className='text-white flex-fill'>
-                    <h2 className='fw-bold fs-3 text-white mb-3'>Mexican Kitchen</h2>
-                    <p className='mb-5 text-secondary'>There are many variation</p>
+                <div className='text-white w-25'>
+                    <h2 className='fw-bold fs-3 text-white mb-3'>Mexican <span className='text-warning'>Kitchen</span></h2>
+                    <p className='mb-5 text-secondary fw-semibold'>Mexico in My Kitchen participates in the Amazon Services LLC Associates Program,  an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. </p>
                 </div>
                 <div className='flex-fill'>
                     <h2 className='fw-bold fs-3 text-white mb-3'>About</h2>

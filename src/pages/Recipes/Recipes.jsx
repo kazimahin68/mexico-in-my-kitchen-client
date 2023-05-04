@@ -29,7 +29,7 @@ const Recipes = () => {
             </div>
             <div className='container mt-5'>
                 <h2 className='text-success bg-white p-3 rounded fw-bold text-center'>Top Recipes of {name}</h2>
-                <CardGroup className='mt-5'>
+                <CardGroup className='mt-3'>
                     {
                         recipes.map(recipe => <RecipeDetails key={recipe.id} recipe={recipe}></RecipeDetails>)
                     }

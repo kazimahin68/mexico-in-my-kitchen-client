@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../Provider/AuthProvider';
 import ActiveLink from './ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const {error, setError} = useState('');
+
+    console.log(user)
 
     const handleLogout =() =>{
         logOut()
@@ -31,11 +32,11 @@ const Header = () => {
                         <Nav>
                             <div className='ms-3'>
                                 {user ? <div className='d-flex justify-content-center align-items-center'>
-                                    <p className='m-0 me-3'>{user.displayName}</p>
+                                    <img className='rounded-circle me-3 w-25' src={user?.photoURL} alt="" />
                                     <p className='m-0 me-3'>{error}</p>
-                                    <Button onClick={handleLogout} variant='secondary' className='fs-6 fw-semibold'>Logout</Button>
+                                    <Button onClick={handleLogout} variant='warning' className='fs-6 fw-bold p-2 px-5'>Logout</Button>
                                 </div> : <Link to="/login">
-                                    <Button variant='secondary' className='fs-6 fw-semibold'>Login</Button>
+                                    <Button variant='warning' className='fs-6 fw-bold p-2 px-5'>Login</Button>
                                 </Link>}
                             </div>
                         </Nav>
