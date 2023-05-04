@@ -7,6 +7,7 @@ import Home from '../pages/Home/Home/Home';
 import Recipes from '../pages/Recipes/Recipes';
 import Blogs from '../pages/Blogs/Blogs';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import PrivateRout from '../pages/PrivateRoute/PrivateRout';
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/recipes/:id',
-                element: <Recipes></Recipes>,
+                element: <PrivateRout><Recipes></Recipes></PrivateRout>,
                 loader: ({params}) => fetch(`https://mexico-in-kitchen-server.vercel.app/chefs/${params.id}`)
             },
             {

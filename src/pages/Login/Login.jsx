@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -11,6 +11,8 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
 
     const handleRegister = event => {
         event.preventDefault();
@@ -36,7 +38,7 @@ const Login = () => {
         handleGoogleLogin()
             .then(() => {
                 setSuccess('You are Successfully Registered');
-                navigate('/')
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 setError(error.message)
