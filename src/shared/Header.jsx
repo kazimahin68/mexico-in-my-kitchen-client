@@ -3,7 +3,6 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../Provider/AuthProvider';
-import logoImage from "../assets/Screenshot 2023-05-03 203047.png";
 import ActiveLink from './ActiveLink';
 
 const Header = () => {
@@ -21,7 +20,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg" bg="primary" variant="light" className='p-3'>
                 <Container>
-                    <img style={{ width: "72px", height: "30px" }} className='ms-2' src={logoImage} alt="" />
+                    <h2 className='fw-bold'>Mexican <span className='text-warning'>Kitchen</span></h2>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="mx-auto">
