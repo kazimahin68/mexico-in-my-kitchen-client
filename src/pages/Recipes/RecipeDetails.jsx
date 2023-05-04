@@ -3,14 +3,17 @@ import { Button, Card, CardGroup, ListGroup } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { GrFavorite } from "react-icons/gr";
+import toast, { Toaster } from 'react-hot-toast';
 
 const RecipeDetails = ({ recipe }) => {
     const [favButton, setFavButton] = useState(false);
-    const { name, rating, ingredients, cooking_method } = recipe;
-    const fiveIngredients = ingredients.slice(0, 5);
+    const { name, rating, ingredients, method } = recipe;
+    // const fiveIngredients = ingredients.slice(0, 5);
+    // console.log(recipe)
 
 
     const handleFavBtn = () =>{
+        toast ("The recipe is added to your favorite list")
         setFavButton(true);
     }
     // console.log(ingredients)
@@ -26,7 +29,7 @@ const RecipeDetails = ({ recipe }) => {
                 </ListGroup>
                 <Card.Text className='fw-semibold'>
                     <span className='d-block text-danger fw-bold mt-4 fs-4 mb-3'>Cooking Method :</span>
-                    {cooking_method}
+                    {method}
                 </Card.Text>
             </Card.Body>
             <Card.Footer className='d-flex gap-2 align-items-center justify-content-between'>
@@ -40,6 +43,7 @@ const RecipeDetails = ({ recipe }) => {
                     <p className='m-0 mt-1'><small>{rating}</small></p>
                 </div>
                 <Button onClick={handleFavBtn} className={!favButton ? "active" : "disabled"}>Favorite <GrFavorite className='text-danger'></GrFavorite></Button>
+                <Toaster></Toaster>
             </Card.Footer>
         </Card>
     );
