@@ -56,8 +56,9 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <Form onSubmit={handleRegister} className='w-50 mx-auto bg-warning p-5 bg-opacity-50 rounded mt-5'>
+        <div className='container d-flex flex-column flex-md-row align-items-center gap-5 mx-auto bg-warning p-5 rounded mt-5'>
+            <img className='rounded w-50' src="https://img.freepik.com/premium-vector/mexican-cuisine-menu-cover-mexico-food-tacos_8071-1621.jpg?w=900" alt="" />
+            <Form onSubmit={handleRegister} className='w-50'>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label className='fw-semibold fs-5'>Email address</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Enter email" required />
@@ -71,15 +72,15 @@ const Login = () => {
                     <Button variant="success" type="submit" className='bg-success bg-opacity-75 w-50 mt-3 fw-semibold'>Login</Button>
                 </div>
 
-                <div className='d-flex justify-content-around align-items-center mt-3'>
+                <div className='d-flex flex-column flex-md-row justify-content-around align-items-center mt-3'>
                     <hr className='text-body border border-3 border-dark w-25' />
                     <p className='m-0 fw-semibold'>Or You can Login By</p>
                     <hr className='text-body border border-3 border-dark w-25' />
                 </div>
-                <div className='d-flex mt-3 justify-content-around align-items-center'>
+                <div className='d-flex flex-column flex-md-row mt-3 justify-content-around align-items-center'>
                     <Button onClick={handleGoogleSignIn} variant="success" className='bg-success bg-opacity-75 p-2 mt-3 fw-semibold me-2'> <FaGoogle className='me-2 text-warning mb-1'></FaGoogle>Sign in with Google</Button>
                     <p className='m-0 fw-bold mt-3 me-2'>OR</p>
-                    <Button onClick={handleGithubSignIn} variant='success' className='bg-success bg-opacity-75 mt-3 p-2'>
+                    <Button onClick={handleGithubSignIn} variant='success' className='bg-success bg-opacity-75 mt-3 p-2 fw-semibold'>
                         <FaGithub className='me-2 mb-1'></FaGithub> Sign in with Github</Button>
                 </div>
                 <p className='text-success fw-semibold'>{success}</p>

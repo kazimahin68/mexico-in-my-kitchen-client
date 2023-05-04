@@ -18,11 +18,11 @@ const Header = () => {
     }
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='mt-4 rounded'>
+            <Navbar collapseOnSelect expand="lg" bg="primary" variant="light" className='p-3'>
                 <Container>
                     <img style={{ width: "72px", height: "30px" }} className='ms-2' src={logoImage} alt="" />
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav" className=''>
+                    <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav className="mx-auto">
                             <Link className='text-decoration-none text-black me-4' to="/">Home</Link>
                             <Link className='text-decoration-none text-black me-4' to="/">Blogs</Link>
