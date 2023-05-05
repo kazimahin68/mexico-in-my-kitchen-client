@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <div className='p-3 container mx-auto'>
                 <div className='bg-white p-5 rounded mt-5'>
-                    <h2 className='fw-bold fs-4'> 1. Differences between uncontrolled and controlled components.</h2>
+                    <h2 className='fw-bold fs-3 text-success'>1. Differences between uncontrolled and controlled components.</h2>
                     <p className='fw-semibold mt-3 fs-5'>In the context of building user interfaces in web development, there are two types of components: controlled and uncontrolled.
                         <br />
                         An uncontrolled component is a component that manages its own state internally. When a user interacts with the component, such as by typing into a text input, the component's state is updated without any intervention from the parent component. The parent component has no direct control over the state of the child component.
@@ -14,7 +14,7 @@ const Blogs = () => {
                         The main difference between the two types of components is the level of control that the parent component has over the child component's state. Uncontrolled components are easier to set up and require less code, but they can be harder to manage and debug as the application grows in complexity. Controlled components provide more control and consistency, but require more code and can be more complex to set up.</p>
                 </div>
                 <div className='bg-white p-5 container rounded mx-auto mt-5'>
-                    <h2 className='fw-bold fs-4'>2. How to validate React props using PropTypes.</h2>
+                    <h2 className='fw-bold fs-3 text-success'>2. How to validate React props using PropTypes.</h2>
                     <ol className='fw-semibold mt-3 fs-5'>
                         <li>Install the prop-types library using npm or yarn.</li>
                         <li>Import the PropTypes module into your component.</li>
@@ -27,7 +27,7 @@ const Blogs = () => {
                     </p>
                 </div>
                 <div className='bg-white p-5 container rounded mx-auto mt-5'>
-                    <h2 className='fw-bold fs-4'>3. Difference between nodejs and express js.</h2>
+                    <h2 className='fw-bold fs-3 text-success'>3. Difference between nodejs and express js.</h2>
                     <ol className='fw-semibold mt-3 fs-5'>
                         <li>Node.js is a runtime environment for executing JavaScript code, while Express.js is a web framework for building server-side applications.</li>
                         <li>Node.js provides a set of built-in libraries for performing various operations, while Express.js provides a set of tools and features for building web applications.</li>
@@ -40,7 +40,7 @@ const Blogs = () => {
                     </p>
                 </div>
                 <div className='bg-white p-5 container rounded mx-auto mt-5'>
-                    <h2 className='fw-bold fs-4'>4. What is a custom hook, and why will you create a custom hook?</h2>
+                    <h2 className='fw-bold fs-3 text-success'>4. What is a custom hook, and why will you create a custom hook?</h2>
                     <ol className='fw-semibold mt-3 fs-5'>
                         <li>A custom hook is a JavaScript function in React that encapsulates complex logic and provides a reusable interface for managing state and side effects.</li>
                         <li>Custom hooks can be created to abstract complex logic, provide a simple interface for state management, and keep your code organized and maintainable.</li>
