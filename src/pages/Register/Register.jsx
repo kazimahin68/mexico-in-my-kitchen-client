@@ -56,6 +56,7 @@ const Register = () => {
 
     return (
         <div className='container mx-auto bg-warning p-5 rounded mt-5'>
+            <h2 className='rounded fs-1 fw-bold text-center mb-5'>Register Your Account here</h2>
             <div className='row row-cols-1 row-cols-md-2 g-5'>
                 <div className='col'>
                     <img className='rounded w-100' src="https://img.freepik.com/premium-photo/three-tacos-wooden-board-with-bowl-salsa-bowl-salsa_254939-862.jpg?w=740" alt="" />

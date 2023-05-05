@@ -22,7 +22,7 @@ const Login = () => {
         const password = form.password.value;
 
 
-    // Login by using email and password
+        // Login by using email and password
         loggedIn(email, password)
             .then(result => {
                 // const loggedUser = result.user;
@@ -66,6 +66,7 @@ const Login = () => {
 
     return (
         <div className='container mx-auto bg-warning p-5 rounded mt-5'>
+            <h2 className='rounded fs-1 fw-bold text-center mb-5'>Logged In To Your Account</h2>
             <div className='row row-cols-1 row-cols-md-2 g-5'>
                 <div className='col'>
                     <img className='rounded w-100' src="https://img.freepik.com/premium-vector/mexican-cuisine-menu-cover-mexico-food-tacos_8071-1621.jpg?w=900" alt="" />
