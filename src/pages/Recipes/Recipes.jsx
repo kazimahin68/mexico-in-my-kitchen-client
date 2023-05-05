@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { FaThumbsUp } from "react-icons/fa";
 import RecipeDetails from './RecipeDetails';
 import { Card, CardGroup } from 'react-bootstrap';
 
