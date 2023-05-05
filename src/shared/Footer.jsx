@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='bg-black p-2 mt-5'>
-            <div className='container d-flex flex-md-row flex-column justify-content-between p-5 gap-4'>
-                <div className='text-white w-25'>
+        <div className='bg-black p-3 mt-5'>
+            <div className='container row row-cols-1 row-cols-md-4 mx-auto pt-5'>
+                <div className='text-white col'>
                     <h2 className='fw-bold fs-3 text-white mb-3'>Mexican <span className='text-warning'>Kitchen</span></h2>
                     <p className='mb-5 text-secondary fw-semibold'>Mexico in My Kitchen participates in the Amazon Services LLC Associates Program,  an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. </p>
                 </div>
-                <div className='flex-fill'>
+                <div className='col'>
                     <h2 className='fw-bold fs-3 text-white mb-3'>About</h2>
                     <ul className='list-none mb-3 text-secondary list-group list-group-flush'>
                         <li className='mb-3 list-group-item'>ABOUT US</li>
@@ -18,14 +18,14 @@ const Footer = () => {
                         <li className='mb-3 list-group-item'>ACCESSIBILITY STATEMENT</li>
                     </ul>
                 </div>
-                <div className='flex-fill'>
+                <div className='col'>
                     <h2 className='fw-bold fs-3 text-white mb-3'>Newsletter</h2>
                     <ul className=' mb-3 text-secondary list-group list-group-flush'>
                         <li className='mb-3 list-group-item'>SIGN UP <Link to='/register'>FOR EMAILS AND UPDATES!</Link></li>
                         
                     </ul>
                 </div>
-                <div className='flex-fill'>
+                <div className='col'>
                     <h2 className='fw-bold fs-3 text-white mb-3'>Follow / Contact</h2>
                     <ul className='list-none mb-3 text-secondary list-group list-group-flush'>
                         <li className='mb-3 list-group-item'>FACEBOOK</li>
