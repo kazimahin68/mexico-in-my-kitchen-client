@@ -12,7 +12,7 @@ const BestChefs = ({ chef }) => {
                     </div>
                     <div className='col'>
                         <h2 className='text-success fw-bold'>{name}</h2>
-                        <p className='fs-4'><span className='text-success fw-bold'>About {name} :</span> {bio}</p>
+                        <p className='fs-4 fw-semibold'><span className='text-success fw-bold'>About {name} :</span> {bio}</p>
                         <p className='fs-5 fw-bold'><span className='text-success fw-bold'>Likes :</span> {likes}</p>
                         <p className='fs-5 fw-bold'><span className='text-success fw-bold'>Recipes: </span> {number_of_recipes} Recipes</p>
                         <p className='fs-5 fw-bold'><span className='text-success fw-bold'>Experiences: </span> {years_of_experience} Years</p>

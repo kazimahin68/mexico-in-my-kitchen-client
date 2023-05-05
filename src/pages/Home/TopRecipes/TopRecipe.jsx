@@ -8,11 +8,11 @@ const TopRecipe = ({ recipe }) => {
     const { name, rating, photo, about } = recipe;
     if (rating > 4.6) {
         return (
-            <div className='text-center container mx-auto p-5 pb-3'>
+            <div className='text-center container mx-auto p-2 p-md-5 pb-3'>
                 <div className='row row-cols-1 row-cols-md-2 align-items-center g-5'>
                     <div className='col order-last order-md-first'>
                         <h2 className=' fw-bold fs-2 mt-3 text-success'>{name}</h2>
-                        <p className='fs-5 mt-4 fw-bold'>
+                        <p className='fs-5 mt-4 fw-semibold'>
                             {about}
                         </p>
                     </div>
