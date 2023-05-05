@@ -16,7 +16,9 @@ const RecipeDetails = ({ recipe }) => {
         toast ("The recipe is added to your favorite list")
         setFavButton(true);
     }
-    // console.log(ingredients)
+
+    // All recipes of specific chef are shown with their ingredients and cooking method
+
     return (
         <Card>
             <Card.Body className=''>
@@ -28,7 +30,7 @@ const RecipeDetails = ({ recipe }) => {
                     }
                 </ListGroup>
                 <Card.Text className='fw-semibold'>
-                    <span className='d-block text-danger fw-bold mt-4 fs-4 mb-3'>Cooking Method :</span>
+                    <span className='d-block text-success fw-bold mt-4 fs-4 mb-3'>Cooking Method :</span>
                     {method}
                 </Card.Text>
             </Card.Body>

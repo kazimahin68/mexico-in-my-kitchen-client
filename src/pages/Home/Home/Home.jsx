@@ -11,7 +11,7 @@ const Home = () => {
 
 
     if (!chefs) {
-        return <Spinner animation="border" variant="danger" />
+        return <Spinner className='container mx-auto mt-5' animation="border" variant="danger" />
     }
 
     else {
@@ -27,6 +27,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className='container mx-auto'>
+                <h2 className='text-success bg-white p-3 rounded fw-bold text-center container mt-5 mb-3'>Most Experienced Chef</h2>
                     {
                         chefs.map(chef => <BestChefs key={chef.id} chef={chef} ></BestChefs>)
                     }

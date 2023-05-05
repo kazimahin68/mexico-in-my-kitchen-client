@@ -12,16 +12,16 @@ const ChefDetails = ({ chef }) => {
             <Card>
                 <Card.Img variant="top" src={picture} />
                 <Card.Body>
-                    <Card.Title className='fw-bold fs-4 text-success mb-4'>{name}</Card.Title>
+                    <Card.Title className='fw-bold fs-3 text-success mb-4'>{name}</Card.Title>
                     <Card.Text className='fw-semibold fs-5'>
-                        <span className='text-danger'>Years of experience:</span> {years_of_experience}
+                        <span className='fw-bold fs-5'><span  className='text-success fw-bold fs-5'>Years of experience: </span> {years_of_experience}</span>
                     </Card.Text>
                     <Card.Text className='d-flex justify-content-between align-items-center'>
-                        <span className='m-0 fw-semibold fs-5'><span className='text-primary'>Number of Recipes:</span> {number_of_recipes}</span>
-                        <span className='m-0 fs-5'><FaThumbsUp className='mb-1 text-primary'></FaThumbsUp> {likes}</span>
+                        <span className='fw-bold fs-5'><span className='text-success'>Number of Recipes:</span> {number_of_recipes}</span>
+                        <span className='fs-5 fw-bold'><FaThumbsUp className='mb-2 text-primary me-1'></FaThumbsUp> {likes}</span>
                     </Card.Text>
                 </Card.Body>
-                <Link to={`/recipes/${id}`}><Button className='text-semibold w-100 fw-bold p-2' variant="success">View Recipes</Button></Link>
+                <Link to={`/recipes/${id}`}><Button className='text-bold w-100 fw-bold p-2 fs-5' variant="success">View Recipes</Button></Link>
             </Card>
         </div>
     );
