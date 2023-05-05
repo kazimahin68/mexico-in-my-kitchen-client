@@ -8,7 +8,7 @@ const PrivateRout = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <Spinner className='container text-center' animation="border" variant="danger" />
+        return <Spinner className='container mx-auto mt-5' animation="border" variant="danger" />
     }
     else if(user){
         return children;

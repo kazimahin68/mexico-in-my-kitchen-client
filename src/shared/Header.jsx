@@ -8,7 +8,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const {error, setError} = useState('');
 
-    console.log(user)
+    // console.log(user)
 
     const handleLogout =() =>{
         logOut()

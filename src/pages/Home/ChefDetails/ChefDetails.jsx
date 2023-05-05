@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaThumbsUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const ChefDetails = ({ chef }) => {
 
@@ -10,7 +11,7 @@ const ChefDetails = ({ chef }) => {
     return (
         <div className='col mb-4'>
             <Card>
-                <Card.Img variant="top" src={picture} />
+                <LazyLoad className='h-100'><Card.Img variant="top" src={picture} /></LazyLoad>
                 <Card.Body>
                     <Card.Title className='fw-bold fs-3 text-success mb-4'>{name}</Card.Title>
                     <Card.Text className='fw-semibold fs-5'>
