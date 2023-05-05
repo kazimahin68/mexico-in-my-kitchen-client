@@ -1,8 +1,23 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
+const options = {
+    orientation: 'landscape',
+    unit: 'px',
+    format: [1080, 976]
+};
 
 const Blogs = () => {
     return (
-        <div className='p-3 container mx-auto'>
+        <div>
+            <div className='container mt-5 d-flex'>
+                <h2 className='text-success bg-white p-3 rounded fw-bold text-center container mt-5 mb-3'>Blogs <span className='ms-5'><Pdf targetRef={ref} filename="blogs.pdf" options={options} x={.5} y={.5} scale={0.8}>
+                    {({ toPdf }) => <button className='ms-5 p-2 rounded bg-success fw-bold border border-0 text-white px-4' onClick={toPdf}>Download Pdf</button>}
+                </Pdf></span>
+                </h2>
+            </div>
+            <div ref={ref} className='p-3 container mx-auto'>
                 <div className='bg-white p-5 rounded mt-5'>
                     <h2 className='fw-bold fs-3 text-success'>1. Differences between uncontrolled and controlled components.</h2>
                     <p className='fw-semibold mt-3 fs-5'>In the context of building user interfaces in web development, there are two types of components: controlled and uncontrolled.
@@ -52,6 +67,7 @@ const Blogs = () => {
                     </p>
                 </div>
             </div>
+        </div>
     );
 };
 
