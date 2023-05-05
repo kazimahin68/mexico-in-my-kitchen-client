@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.1.9",
     "bootstrap": "^5.2.3",
     "firebase": "^9.21.0",
     "localforage": "^1.10.0",
@@ -20,8 +21,10 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
     "react-lazy-load": "^4.0.1",
+    "react-pdf": "^6.2.2",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.11.0",
+    "react-to-pdf": "^0.0.14",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
